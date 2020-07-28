@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function() {
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::get('/contact', function() {
-    return view('contact');
+	return view('contact');
 });
 
 Route::get('/elements', function() {
-    return view('elements');
+	return view('elements');
 });
 
 Route::get('/generic', function() {
-    return view('generic');
+	return view('generic');
 });
 
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');

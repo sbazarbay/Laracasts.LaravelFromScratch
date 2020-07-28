@@ -14,48 +14,48 @@ class ArticlesController extends Controller
 		return view('articles.index', ['articles' => $articles]);
 	}
 
-    public function show(Article $article)
-    {
-    	// Show a single resource.
+	public function show(Article $article)
+	{
+		// Show a single resource.
 
-    	return view('articles.show', ['article' => $article]);
-    }
+		return view('articles.show', ['article' => $article]);
+	}
 
-    public function create() {
-    	return view('articles.create');
-    }
+	public function create() {
+		return view('articles.create');
+	}
 
-    public function store() {
-        // validation
+	public function store() {
+		// validation
 
-        Article::create($this->validateArticle());
+		Article::create($this->validateArticle());
 
-    	return redirect('articles.index');
-    }
+		return redirect()->route('articles.index');
+	}
 
-    public function edit(Article $article) {
-    	// Show a view to edit an existing resource.
-         
-        return view('articles.edit', compact('article')); 
-    }
+	public function edit(Article $article) {
+		// Show a view to edit an existing resource.
+		 
+		return view('articles.edit', compact('article')); 
+	}
 
-    public function update(Article $article) {
-    	// Persist the edited resource.
-        $article->update($this->validateArticle());
+	public function update(Article $article) {
+		// Persist the edited resource.
+		$article->update($this->validateArticle());
 
-        return redirect($article->path());
-        
-    }
+		return redirect($article->path());
+		
+	}
 
-    public function destroy() {
-    	// Delete the resource.
-    }
+	public function destroy() {
+		// Delete the resource.
+	}
 
-    protected function validateArticle() {
-        return request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
-    }
+	protected function validateArticle() {
+		return request()->validate([
+			'title' => 'required',
+			'excerpt' => 'required',
+			'body' => 'required'
+		]);
+	}
 }
