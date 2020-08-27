@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Example of basic Service Container
+
+// Route::get('/', function() {
+// 	$container = new App\Container();
+
+// 	$container->bind('example', function () {
+// 		return new App\Example();
+// 	});
+
+// 	$example = $container->resolve('example');
+
+// 	$example->go();
+// });
+
 Route::get('/', function() {
 	return view('welcome');
 });
