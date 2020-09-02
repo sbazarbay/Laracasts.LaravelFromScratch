@@ -100,7 +100,7 @@ return [
     */
 
     'markdown' => [
-        'theme' => 'default',
+        'theme' => 'laravel-from-scratch',
 
         'paths' => [
             resource_path('views/vendor/mail'),
