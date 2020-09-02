@@ -45,6 +45,9 @@ Route::get('/generic', function() {
 	return view('generic');
 });
 
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
+
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 Route::post('/articles', 'ArticlesController@store')->name('articles.store');
 Route::get('/articles/create', 'ArticlesController@create')->name('articles.create');
